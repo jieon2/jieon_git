@@ -31,13 +31,13 @@
 											<li><a href="#">MBTI</a></li>											
 										</ul>
                                     </li>
-									<li><a class="far fa-comments" href="right-sidebar.html"><span>커뮤니티</span></a>
+									<li><a class="far fa-comments" href="/community/free_board.jsp"><span>커뮤니티</span></a>
                                         <ul>
 											<li><a href="/community/free_board.jsp">자유게시판</a></li>
 											<li><a href="/community/info_board.jsp">정보게시판</a></li>
 										</ul>
                                     </li>
-									<li><a class="fab fa-quora" href="no-sidebar.html"><span>고객센터</span></a>
+									<li><a class="fab fa-quora" href="/ServiceCenter/notice.jsp"><span>고객센터</span></a>
                                         <ul>
 											<li><a href="/ServiceCenter/notice.jsp">공지사항</a></li>
 											<li><a href="/ServiceCenter/FAQ.jsp">FAQ</a></li>
