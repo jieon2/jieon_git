@@ -10,14 +10,14 @@
 	<body class="homepage is-preload">
 		<div id="page-wrapper">
 
-			<!-- Header -->
-				<section id="header">
-					<div class="container">                     
-                                                
-
+			<!-- Header -->					
+			
+				<section id="header">					
 						<!-- Logo -->
-							<h1 id="logo"><a href="index.html">MY HOB!</a></h1>
-							
+						<h1 id="logo"><a href="index.html">MY HOB!</a></h1>										
+									
+					<div class="container">                    
+						
 
 						<!-- Nav -->
                             
