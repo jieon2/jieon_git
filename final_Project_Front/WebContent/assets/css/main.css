@@ -2424,6 +2424,7 @@ input, select, textarea {
 		margin: 0 auto;
 		max-width: 100%;
 		width: 70em;
+		
 	}
 
 		@media screen and (max-width: 1680px) {
@@ -4119,7 +4120,7 @@ input, select, textarea {
 
 	#header {
 		position: relative;
-		position: relative;
+		
 		background: #fff;
 		text-align: center;
 	}

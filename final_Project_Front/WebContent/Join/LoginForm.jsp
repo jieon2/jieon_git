@@ -61,18 +61,18 @@
                             
 					</div>
 				</section>
-            
-    <section id="l_content">
+    <div align="center">        
+    <div id="l_content">
     <section class="l_container">
     <section class="l_wrapper">
     
-    <div="l_header">
+    <div class="l_header">
         <div class="l_logo">
             <span>LOGIN</span>
         </div>
-            <h1>Welcome back!</h1>
+           <!-- <h1>Welcome back!</h1> --> 
       
-    </l_header>
+    </div>
     
     <section class="l_main-content">
 	   <form method="post" action ="../Join/LoginPro.jsp">
@@ -111,6 +111,7 @@
         
     </section>
     </section>
- </section>
+    </div>
+ </div>
 </body>
 </html>
