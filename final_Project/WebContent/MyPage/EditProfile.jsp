@@ -1,16 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="Test.user"%>
- <jsp:useBean id="userjoin" class="Test.userDB"/>
- 
+<jsp:useBean id="userjoin" class="Test.userDB"/>
+ <jsp:useBean id="bean" class="Test.user"/>
  <%
 	String id =(String)session.getAttribute("id");
-	out.print(id);
 	user use = userjoin.getData(id);
+	boolean b = userjoin.modifyData(bean);
 %>
-
-
-
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -18,56 +15,62 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main1.css" />
 		<link rel="stylesheet" href="../assets/css/MyPage.css" />
+	
 
 	</head>
 	<body class="no-sidebar is-preload">
 		<div id="page-wrapper">
 
 			<!-- Header -->
-				<section id="header">
+          <section id="header">
                <div class="container">
 
-                  <!-- Logo -->
-                     <h1 id="logo"><a href="index.jsp">MY HOB!</a></h1>
-                     <p>A responsive HTML5 site template. Manufactured by HTML5 UP.</p>
-
+                  <!-- Logo-->
+                  <h1 id="logo"><a href="/index.jsp">MY HOB!</a></h1>
+                  
                   <!-- Nav -->
                      <nav id="nav">
-								<ul>
-									
-									<li><a class="fab fa-medium-m" href="#"><span>About Us</span></a></li>
-									<li><a class="icon solid fa-cog" href="left-sidebar.html"><span>취미탐색</span></a>
-                                        <ul>
-											<li><a href="#">취미 검사</a></li>
-											<li><a href="#">MBTI</a></li>											
-										</ul>
-                                    </li>
-									<li><a class="far fa-comments" href="/community/freeboard/free_board.jsp"><span>커뮤니티</span></a>
-                                        <ul>
-											<li><a href="/community/freeboard/free_board.jsp">자유게시판</a></li>
-											<li><a href="/community/infoboard/info_board.jsp">정보게시판</a></li>
-										</ul>
-                                    </li>
-									<li><a class="fab fa-quora" href="/ServiceCenter/Noticeboard/notice.jsp"><span>고객센터</span></a>
-                                        <ul>
-											<li><a href="/ServiceCenter/Noticeboard/notice.jsp">공지사항</a></li>
-											<li><a href="/ServiceCenter/FAQboard/FAQ.jsp">FAQ</a></li>
-											<li><a href="/ServiceCenter/Q&Aboard/Q&A.jsp">Q&A</a></li>
-										</ul>
-                                    </li>
-								</ul>
-                                
-                                <ul class="navtop">   
-                                
-                                    <li><a href="/Join/LoginForm.jsp">Login</a></li>
-				                    <li><a href="/Join/insertForm.jsp">Join</a></li>
-                                    <li><a class="fas fa-user fa-1.5x" href="/MyPage/Profile.jsp"></a>
-                                    <span></span></a>
-										
-                                    </li>             
+                        <ul class="mainnav">
+                        	<li><a href="/index.jsp"><span>About Us</span></a></li>
+                         	<li>
+                              <a href="/HobbyTest/mbti.jsp"><span>Hobby</span></a>
+                              <ul>
+                                 <li><a href="/HobbyTest/mbti.jsp">취미 검사</a></li>
+                                 <li><a href="/HobbyTest/mbti.jsp">MBTI 검사</a></li>
+                              </ul>
+                           </li>
+                          
+                           <li><a href="/ServiceCenter/FAQboard/FAQ.jsp">
+                           <span>Service Center</span></a>
+                              <ul>
+                                 <li><a href="/ServiceCenter/Noticeboard/notice.jsp">공지사항</a></li>
+                                 <li><a href="/ServiceCenter/FAQboard/FAQ.jsp">FAQ</a></li>
+                                 <li><a href="/ServiceCenter/Q&Aboard/Q&A.jsp">Q&A</a></li>
+                              </ul>
+                           </li>
+                           <li><a href="/community/infoboard/info_board.jsp">
+                              <span>community</span></a>
+                              <ul>
+                                 <li><a href="/community/freeboard/free_board.jsp">자유게시판</a></li>
+                                 <li><a href="/community/infoboard/info_board.jsp">정보게시판</a></li>
+                              </ul>
+                           </li>
                         </ul>
-                                
-							</nav>                                
+                        <ul class="navtop"> 
+                        			<%if("admin".equals(session.getAttribute("id"))){ %> <!-- 관리자면 -->
+	                                	<li><a href="/admin/memberList.jsp">관리자메뉴</a></li>
+	                                	<li><a href="/Join/Logout.jsp">Logout</a></li>
+	                                	
+                                	<%}else if(session.getAttribute("id")!=null){ %>      <!-- 아이디가 있으면 -->
+	                                	<li><a href="/Join/Logout.jsp">Logout</a></li>
+	                                	<li><a class="fas fa-user fa-1.5x" href="/MyPage/Profile.jsp"></a></li>
+                                	<%}else{%>       
+                                	<li><a href="/Join/LoginForm.jsp">Login</a></li>
+				                    <li><a href="/Join/insertForm.jsp">Join</a></li>
+				                    <%} %>
+                                            
+                        </ul>
+                     </nav>
 
                </div>
             </section>
@@ -89,6 +92,7 @@
 						<div id="content">
 							
 							<!-- EditProfile -->
+							<form method="post" action="/MyPage/modifyPro.jsp">
 									<header>
 										<h2>회원 정보 수정</h2>
 									</header>
@@ -147,7 +151,7 @@
 												</td>
 											</tr>
 											
-											 <tr>
+											 <%-- <tr>
 								                <td align="center"><b>일반전화</b></td>
 								                <td>
 								               		 <select name="homephone1" id="homephone" style="width:70px;">
@@ -174,12 +178,12 @@
 								                </td>
 								            </tr>
 								            
-								          
+								          --%>
 								         
 								            <tr>
 								                <td align="center"><b>생년월일</b></td>
 								                <td>
-								                	<input type="text" name="birth" size="10" value=<%=use.getPhone()%>>
+								                	<input type="text" name="birth" size="10" value=<%=use.getBirth()%>>
 								                	<%-- <input type="text" name="birth" size="10" value="<%=use.getBirth()%>">월
 								               		<input type="text" name="birth" size="10" value="<%=use.getBirth()%>">일 --%>
 								                	<!-- <input type="radio" name="양력음력" value="양력">양력
@@ -189,7 +193,7 @@
 								              <tr>
 								                <td align="center"><b>휴대전화</b></td>
 								                <td>
-								               		 <input type="text" id="phone" value=<%=use.getBirth()%> style="width:70px;">
+								               		 <input type="text" id="phone" size="10" value=<%=use.getPhone()%>>
 								               		 	<!-- <option value="선택">선택</option>
 									                	<option value="010">010</option>
 									                	<option value="011">011</option>
@@ -213,11 +217,13 @@
 								                </td>
 								            </tr>
         					</table>
-        									<input type="button" id="delete" value="회원탈퇴">
-        									<input type="button" id="modify" value="수정">
+        					</form>
+        								<input type="submit" id="delete" value="회원탈퇴" 
+        								onClick="location.href='/MyPage/deletePro.jsp'"/>
+        								<input type="submit" id="modify" value="수정하기"
+        								onClick="location.href='/MyPage/modifyPro.jsp'"/>
         				</div>
-								        
-								      
+
         			</div>
         							
 				</section>

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ page import = "board.BoardDBBean" %>
 <%@ page import = "board.BoardDataBean" %>
@@ -10,6 +10,8 @@
 %>
 
 <%
+	request.setCharacterEncoding("utf-8");
+	String id=(String)session.getAttribute("id");
 	String pageNum = request.getParameter("pageNum");
 	if (pageNum == null) {
 	    pageNum = "1";
@@ -24,9 +26,16 @@
 	BoardDBBean dbPro = BoardDBBean.getInstance();
 	
 	String boardType="qna";
-	String searchOption=request.getParameter("searchOption");	
-	String keyword=request.getParameter("keyword");
-	articleList = dbPro.getArticles(startRow, pageSize, boardType,searchOption,keyword);
+	String keyField="";
+	String keyword="";
+	
+	if(request.getParameter("keyField")!=null){
+		 keyField=request.getParameter("keyField");	
+		 keyword=request.getParameter("keyword");
+	
+	}
+
+	articleList = dbPro.getArticles(startRow, pageSize, boardType,keyField,keyword);
 	
 
 	if(articleList!=null){
@@ -49,28 +58,21 @@
             <section id="header">
                <div class="container">
 
-                  <!-- Logo -->
-                     <h1 id="logo"><a href="/index.jsp">MY HOB!</a></h1>
-
+                  <!-- Logo-->
+                  <h1 id="logo"><a href="/index.jsp">MY HOB!</a></h1>
+                  
                   <!-- Nav -->
                      <nav id="nav">
-                        <ul>
-                           <li><a href="/index.jsp"><span>About Us</span></a></li>
-                           <li>
+                        <ul class="mainnav">
+                        	<li><a href="/index.jsp"><span>About Us</span></a></li>
+                         	<li>
                               <a href="/HobbyTest/mbti.jsp"><span>Hobby</span></a>
                               <ul>
                                  <li><a href="/HobbyTest/mbti.jsp">취미 검사</a></li>
                                  <li><a href="/HobbyTest/mbti.jsp">MBTI 검사</a></li>
                               </ul>
                            </li>
-                           <li><a href="/MyPage/MyClass.jsp">
-                           <span>MY Page</span></a>
-                              <ul>
-                                 <li><a href="/MyPage/MyClass.jsp">My Class</a></li>
-                                 <li><a href="/MyPage/HobbyLog.jsp">활동로그</a></li>
-                                 <li><a href="/MyPage/Profile.jsp">내 프로필</a></li>
-                                 <li><a href="/MyPage/EditProfile.jsp">프로필수정</a></li>
-                              </ul>
+                           
                            <li><a href="/ServiceCenter/FAQboard/FAQ.jsp">
                            <span>Service Center</span></a>
                               <ul>
@@ -85,8 +87,21 @@
                                  <li><a href="/community/freeboard/free_board.jsp">자유게시판</a></li>
                                  <li><a href="/community/infoboard/info_board.jsp">정보게시판</a></li>
                               </ul>
-                           
                            </li>
+                        </ul>
+                        <ul class="navtop"> 
+                        			<%if("admin".equals(session.getAttribute("id"))){ %> <!-- 관리자면 -->
+	                                	<li><a href="/admin/memberList.jsp">관리자메뉴</a></li>
+	                                	<li><a href="../Join/Logout.jsp">Logout</a></li>
+	                                	
+                                	<%}else if(session.getAttribute("id")!=null){ %>      <!-- 아이디가 있으면 -->
+	                                	<li><a href="../Join/Logout.jsp">Logout</a></li>
+	                                	<li><a class="fas fa-user fa-1.5x" href="/MyPage/Profile.jsp"></a></li>
+                                	<%}else{%>       
+                                	<li><a href="/Join/LoginForm.jsp">Login</a></li>
+				                    <li><a href="/Join/insertForm.jsp">Join</a></li>
+				                    <%} %>
+                                            
                         </ul>
                      </nav>
 
@@ -140,12 +155,12 @@
 			    	if(article.getRe_level()>0){
 			    		wid=5*(article.getRe_level());
 			    %>
-			    	<img src="/images/level-0000.jpg" width="<%=wid%>"height="16">
+			    	<img src="/images/level-0000.gif" width="<%=wid%>"height="16">
 			    	<img src="/images/re-0000.gif">
 			    	
 			    <% //원글이라면
 			    	}else{ %>
-			  		<img src="/images/level-0000.jpg" width="<%=wid%>"height="16">
+			  		<img src="/images/level-0000.gif" width="<%=wid%>"height="16">
 			  	<% } %>
 			  	
 			  	
@@ -162,28 +177,38 @@
 			<%}%>
 			</table>
 			<%}%>
-				<table>
-				  <tr>
-				    <td align="right">
-				       <a href="qna_writeForm.jsp">글쓰기</a>
-				    </td>
-				  </tr>
-				</table>
-			
+			<table>
+			  <tr>
+			    <td align="center">
+			    
+				<% if (session.getAttribute("id") != null) {%>
+					<button type="button" class="write" onclick="writeCheck()">글쓰기</button>
+				<%} else {%>
+					<button type="button" class="write" onclick="IdCheck()" >글쓰기</button>
+				<%} %>
+			    </td>
+			  </tr>
+			</table>
+			<form name="search"  method="post" action="/ServiceCenter/Q&Aboard/Q&A.jsp">
 				<div>
+				<table>
+				
 					<tr>
 				  		<td>
-				  			<select name="searchOption">
-					  			<option value="all"> 제목+이름+내용 </option>
-								<option value="writer" >이름</option>
-								<option value="content" >내용 </option>
-								<option value="title"  >제목</option>	
+				  			<select name="keyField">
+				  				<option value="" selected>전체</option>
+								<option value="writer">이름</option>
+								<option value="content">내용 </option>
+								<option value="subject">제목</option>	
 				  			</select>
 					  		<input type="text" id="keyword" name="keyword">
-					  		<input type="submit" name="submit" value="검색">
+					  		<input type="submit" value="검색">
+					  	
 				  		</td>
 				  	</tr>
+				  	</table>
 			  	</div>
+			</form>	
 			  	<div style=text-align:center;>
 			<%
 				if(count>0){
@@ -225,5 +250,15 @@
 			<script src="../assets/js/breakpoints.min.js"></script>
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
+			<script>
+			function writeCheck(){
+				location.href="/ServiceCenter/Q&Aboard/qna_writeForm.jsp";
+			}
+			
+			function IdCheck(){
+				alert("회원만 글을 쓸수있습니다.");
+				location.href="/Join/LoginForm.jsp";
+			}
+			</script>
 	</body>
 </html>

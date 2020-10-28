@@ -17,4 +17,5 @@
     dbPro.insertArticle(article); 
 
     response.sendRedirect("/community/freeboard/free_board.jsp");
+   
 %>

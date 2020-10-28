@@ -54,13 +54,19 @@
                            
                            </li>
                         </ul>
-                        <ul class="navtop">   
-                                
-                                    <li><a href="/Join/LoginForm.jsp">Login</a></li>
+                        <ul class="navtop"> 
+                        			<%if("admin".equals(session.getAttribute("id"))){ %> <!-- 관리자면 -->
+	                                	<li><a href="/admin/memberList.jsp">관리자메뉴</a></li>
+	                                	<li><a href="../Join/Logout.jsp">Logout</a></li>
+	                                	
+                                	<%}else if(session.getAttribute("id")!=null){ %>      <!-- 아이디가 있으면 -->
+	                                	<li><a href="../Join/Logout.jsp">Logout</a></li>
+	                                	<li><a class="fas fa-user fa-1.5x" href="/MyPage/Profile.jsp"></a></li>
+                                	<%}else{%>       
+                                	<li><a href="/Join/LoginForm.jsp">Login</a></li>
 				                    <li><a href="/Join/insertForm.jsp">Join</a></li>
-                                    <li><a class="fas fa-user fa-1.5x" href="/MyPage/Profile.jsp"></a>
-                                    
-                                    </li>             
+				                    <%} %>
+                                            
                         </ul>
                      </nav>
 
@@ -70,13 +76,13 @@
        <div id="my-Sidebar">
            <h2>HOBBY</h2>
               <ul>
-                    <li><a href="Art.jsp" >Art</a></li>
-                   <li><a href="Cook.jsp" >Cook</a></li>
-                   <li><a href="DIY.jsp" >DIY</a></li>
-                   <li><a href="Language.jsp" >Language</a></li>
-                   <li><a href="Music.jsp" >Music</a></li>
-                   <li><a href="PhotoNVideo.jsp" >Photo & Video</a></li>
-                   <li><a href="Sport.jsp" >Sport</a></li>
+                    <li><a href="/Hobby/Art.jsp" >Art</a></li>
+                   <li><a href="/Hobby/Cook.jsp" >Cook</a></li>
+                   <li><a href="/Hobby/DIY.jsp" >DIY</a></li>
+                   <li><a href="/Hobby/Language.jsp" >Language</a></li>
+                   <li><a href="/Hobby/Music.jsp" >Music</a></li>
+                   <li><a href="/Hobby/PhotoNVideo.jsp" >Photo & Video</a></li>
+                   <li><a href="/Hobby/Sport.jsp" >Sport</a></li>
               </ul>
          </div>
          
@@ -110,11 +116,9 @@
                             <p>월 42,000원 (6개월)</p>
                    </div>
                  </div>
-                   </div>
-                 </div>
             </div>
-                          </div>
-                           </section>
+	       		</div>
+	        </section>
       <!-- Scripts -->
          <script src="../assets/js/jquery.min.js"></script>
          <script src="../assets/js/jquery.dropotron.min.js"></script>

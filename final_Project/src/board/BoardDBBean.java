@@ -44,7 +44,7 @@ public class BoardDBBean {
     }
  
     //board테이블에 글을 추가 (insert문) <=writePro.jsp 페이지에서 사용
-	public void insertArticle(BoardDataBean article) throws Exception {
+    public void insertArticle(BoardDataBean article) throws Exception {
         Connection conn = null;
         PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -150,22 +150,34 @@ public class BoardDBBean {
     }
 
 	//글의 목록(복수개의 글)을 가져옴 (select문) <=list.jsp에서 사용.
-	public List<BoardDataBean> getArticles(int start, int end, String boardType, String searchOption, String keyword)
+	public List<BoardDataBean> getArticles(int start, int end, String boardType, String keyField, String keyword)
              throws Exception {
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         List<BoardDataBean> articleList=null;
+        
+        String sql="";
+        
         try {
             conn = getConnection();
+            if(!"".equals(keyField) ){
+            	sql ="select * from board where "+keyField+" like ? and boardType= ? order by ref desc, re_step asc limit ?,?"; 
+	            pstmt=conn.prepareStatement(sql);
+	            pstmt.setString(1,"%"+keyword+"%");
+	            pstmt.setString(2, boardType);
+	            pstmt.setInt(3, start-1);
+				pstmt.setInt(4, end);
             
-            pstmt = conn.prepareStatement(
-            	"select * from board where boardType= ? order by ref desc, re_step asc limit ?,? ");
-            pstmt.setString(1, boardType);
-            pstmt.setInt(2, start-1);
-			pstmt.setInt(3, end);
-            rs = pstmt.executeQuery();
-
+            }else{
+                sql="select * from board where boardType= ? order by ref desc, re_step asc limit ?,? ";
+                pstmt=conn.prepareStatement(sql);
+                pstmt.setString(1, boardType);
+                pstmt.setInt(2, start-1);
+    		    pstmt.setInt(3, end);
+            }
+	            rs = pstmt.executeQuery();
+            
             if (rs.next()) {
                 articleList = new ArrayList<BoardDataBean>(end);
                 do{
@@ -182,11 +194,13 @@ public class BoardDBBean {
 				  article.setRe_level(rs.getInt("re_level"));
                   article.setContent(rs.getString("content"));
                   article.setBoardType(rs.getString("boardType"));
-
+			     
+				  
                   articleList.add(article);
 			    }while(rs.next());
 			}
-        } catch(Exception ex) {
+          
+        }catch(Exception ex) {
             ex.printStackTrace();
         } finally {
             if (rs != null) try { rs.close(); } catch(SQLException ex) {}
@@ -205,6 +219,7 @@ public class BoardDBBean {
         BoardDataBean article=null;
         try {
             conn = getConnection();
+
             pstmt = conn.prepareStatement(
             	"update board set readcount=readcount+1 where num = ?");
 			pstmt.setInt(1, num);
@@ -227,6 +242,7 @@ public class BoardDBBean {
                 article.setRe_step(rs.getInt("re_step"));
 				article.setRe_level(rs.getInt("re_level"));
                 article.setContent(rs.getString("content"));
+			   
 			}
         } catch(Exception ex) {
             ex.printStackTrace();
@@ -237,7 +253,91 @@ public class BoardDBBean {
         }
 		return article;
     }
-    
+	
+    /////관리자페이지 게시글 목록전체 가져오기
+	public List<BoardDataBean> getAdminArticles(int start, int end, String keyField, String keyword)
+            throws Exception {
+       Connection conn = null;
+       PreparedStatement pstmt = null;
+       ResultSet rs = null;
+       List<BoardDataBean> adminArticle=null;
+       String sql="";
+       
+       try {
+           conn = getConnection();
+           if(!"".equals(keyField) ){
+           	sql ="select * from board where "+keyField+" like ?  order by ref desc, re_step asc limit ?,?"; 
+	            pstmt=conn.prepareStatement(sql);
+	            pstmt.setString(1,"%"+keyword+"%");
+	            pstmt.setInt(2, start-1);
+				pstmt.setInt(3, end);
+           
+           }else{
+               sql="select * from board order by ref desc, re_step asc limit ?,? ";
+               pstmt=conn.prepareStatement(sql);
+               pstmt.setInt(1, start-1);
+   		    pstmt.setInt(2, end);
+           }
+	            rs = pstmt.executeQuery();
+
+           if (rs.next()) {
+        	   adminArticle = new ArrayList<BoardDataBean>(end);
+               do{
+                 BoardDataBean admin= new BoardDataBean();
+                 admin.setNum(rs.getInt("num"));
+                 admin.setWriter(rs.getString("writer"));
+                 admin.setEmail(rs.getString("email"));
+                 admin.setSubject(rs.getString("subject"));
+                 admin.setPasswd(rs.getString("passwd"));
+                 admin.setReg_date(rs.getTimestamp("reg_date"));
+                 admin.setReadcount(rs.getInt("readcount"));
+                 admin.setRef(rs.getInt("ref"));
+                 admin.setRe_step(rs.getInt("re_step"));
+                 admin.setRe_level(rs.getInt("re_level"));
+                 admin.setContent(rs.getString("content"));
+                 admin.setBoardType(rs.getString("boardType"));
+			     
+				  
+                 adminArticle.add(admin);
+			    }while(rs.next());
+			}
+       } catch(Exception ex) {
+           ex.printStackTrace();
+       } finally {
+           if (rs != null) try { rs.close(); } catch(SQLException ex) {}
+           if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
+           if (conn != null) try { conn.close(); } catch(SQLException ex) {}
+       }
+		return adminArticle;
+   }
+	
+	
+	////admin 게시글 전체글수 
+		public int getAdminListCount() throws Exception {
+	        Connection conn = null;
+	        PreparedStatement pstmt = null;
+	        ResultSet rs = null;
+
+	        int x=0;
+
+	        try {
+	            conn = getConnection();
+	            
+	            pstmt = conn.prepareStatement("select count(*) from board ");
+	            rs = pstmt.executeQuery();
+
+	            if (rs.next()) {
+	               x= rs.getInt(1);
+				}
+	        } catch(Exception ex) {
+	            ex.printStackTrace();
+	        } finally {
+	            if (rs != null) try { rs.close(); } catch(SQLException ex) {}
+	            if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
+	            if (conn != null) try { conn.close(); } catch(SQLException ex) {}
+	        }
+			return x;
+	    }
 	 //글 수정폼에서 사용할 글의 내용(1개의 글)(select문)<=updateForm.jsp에서 사용
     public BoardDataBean updateGetArticle(int num)
           throws Exception {
@@ -265,7 +365,8 @@ public class BoardDBBean {
                 article.setRef(rs.getInt("ref"));
                 article.setRe_step(rs.getInt("re_step"));
 				article.setRe_level(rs.getInt("re_level"));
-                article.setContent(rs.getString("content"));     
+                article.setContent(rs.getString("content"));
+			     
 			}
         } catch(Exception ex) {
             ex.printStackTrace();
@@ -278,7 +379,8 @@ public class BoardDBBean {
     }
 
     //글 수정폼에서 사용할 글의 내용(1개의 글)(update문)<=updatePro.jsp에서 사용
-    public int updateArticle(BoardDataBean article) throws Exception {
+    public int updateArticle(BoardDataBean article)
+          throws Exception {
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs= null;
@@ -342,7 +444,8 @@ public class BoardDBBean {
 			if(rs.next()){
 				dbpasswd= rs.getString("passwd"); 
 				if(dbpasswd.equals(passwd)){
-					pstmt = conn.prepareStatement("delete from board where num=?");
+					pstmt = conn.prepareStatement(
+            	      "delete from board where num=?");
                     pstmt.setInt(1, num);
                     pstmt.executeUpdate();
 					x= 1; //글삭제 성공

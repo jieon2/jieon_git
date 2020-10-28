@@ -64,9 +64,9 @@ input::-moz-focus-inner {
 
 input, select, textarea {
 	-moz-appearance: none;
-	/*-webkit-appearance: none;*/
+	/*-webkit-appearance: none;
 	-ms-appearance: none;
-	appearance: none;
+	appearance: none;*/
 }
 
 /* Basic */
@@ -1672,7 +1672,7 @@ input, select, textarea {
 		-webkit-transition: background-color 0.25s ease-in-out;
 		-ms-transition: background-color 0.25s ease-in-out;
 		transition: background-color 0.25s ease-in-out;
-		-webkit-appearance: none;
+		/*-webkit-appearance: none;*/
 		display: block;
 		border: 0;
 		background: #e8e8e8;
@@ -1767,7 +1767,7 @@ input, select, textarea {
 		-webkit-transition: all 0.25s ease-in-out;
 		-ms-transition: all 0.25s ease-in-out;
 		transition: all 0.25s ease-in-out;
-		-webkit-appearance: none;
+		/*-webkit-appearance: none;*/
 		position: relative;
 		display: inline-block;
 		background: #ed786a;
@@ -1782,7 +1782,7 @@ input, select, textarea {
 		text-align: center;
 		font-size: 0.85em;
 		letter-spacing: 2px;
-		padding: 0.85em 2.75em 0.85em 2.75em;
+		padding: 10px;
 	}
 
 		input[type="button"].icon:before,
@@ -2129,15 +2129,18 @@ input, select, textarea {
 				color: #ed786a;
 			}
 
-        .navtop{
-            position: absolute;
-            top:-50px;
-            left:450px;
-            width: 100%;
-            cursor: default;
-            font-size: 0.8em;
-    
-        }
+    .navtop {
+    position: absolute;
+    top: -50px;
+    left: 450px;
+    right: 0px;
+    width: 100%;
+    cursor: default;
+    font-size: 0.8em;
+    display:block;
+    justify-content: space-between;
+    align-items: center;
+}
 
 /*Category*/   
 

@@ -3,7 +3,7 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-/*var sildes = document.querySelector('.slides'),
+var sildes = document.querySelector('.slides'),
 
 	slide =document.querySelectorAll('.slides li'),
 	currentIdx=0,
@@ -23,17 +23,4 @@
 	
 	nextBtn.addEventListener('click',function(){
 		moveSlide(currentIdx +1);
-	});*/
-
-
-const mySiema = new Siema({
-  perPage: {
-    768: 2,
-    1024: 3 } });
-
-
-const prev = document.querySelector('.prev');
-const next = document.querySelector('.next');
-
-prev.addEventListener('click', () => mySiema.prev());
-next.addEventListener('click', () => mySiema.next());
+	});
