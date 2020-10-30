@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="../assets/css/writeFormStyle.css"/>
+<link rel="stylesheet" href="../assets/css/main.css"/>
 <title>게시판</title>
 <script>
 function boardCheck(){
