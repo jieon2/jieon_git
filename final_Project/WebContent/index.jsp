@@ -18,13 +18,11 @@
             <section id="header">
                <div class="container">
 
-                  <!-- Logo -->
-                     <h1 id="logo"><a href="/index.jsp">MY HOB!</a></h1>
-
+                  
                   <!-- Nav -->
                      <nav id="nav">
                         <ul>
-                           <li><a href="/index.jsp"><span>About Us</span></a></li>
+                           <li><a href="/AboutUs.jsp"><span>About Us</span></a></li>
                            <li>
                               <a href="/HobbyTest/mbti.jsp"><span>Hobby</span></a>
                               <ul>
@@ -65,7 +63,9 @@
                                             
                         </ul>
                      </nav>
-
+					<!-- Logo -->
+                     <h1 id="logo"><a href="/index.jsp">MY HOB!</a></h1>
+					
                </div>
             </section>
 	
@@ -258,53 +258,6 @@
 	
   
 
-
-<div class="about">
-   <a class="bg_links social portfolio" href="https://www.rafaelalucas.com/dailyui" target="_blank">
-      <span class="icon"></span>
-   </a>
-   <a class="bg_links social dribbble" href="https://dribbble.com/rafaelalucas" target="_blank">
-      <span class="icon"></span>
-   </a>
-   <a class="bg_links social linkedin" href="https://www.linkedin.com/in/rafaelalucas/" target="_blank">
-      <span class="icon"></span>
-   </a>
-   
-</div>
-<!-- end about -->
-
-<div class="wrapper">
-
-   <section class="module-team">
-
-      <div class="team">
-        
-         <div class="team-cards">
-
-            <!-- Slider main container -->
-            <div class="swiper-container">
-               <!-- Additional required wrapper -->
-               <div class="swiper-wrapper"></div>
-
-            </div>
-
-            <div class="swiper-pagination"></div>
-            <!-- If we need navigation buttons -->
-            <div class="navigation">
-               <div class="swiper-button-prev"></div>
-               <div class="swiper-button-next"></div>
-            </div>
-         </div>
-
-      </div>
-</div>
-
-</section>
-
-</div>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js'></script><script  src="./script.js"></script>
 
 
 	

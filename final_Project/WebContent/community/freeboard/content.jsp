@@ -25,17 +25,14 @@
 <html>
 <head>
 <title>게시판</title>
-<link rel="stylesheet" href="/assets/css/main.css">
+
 <link rel="stylesheet" href="/assets/css/content.css">
 </head>
-<body>
+<body style="overflow-x:hidden">
 
 <!-- Header -->
             <section id="header">
                <div class="container">
-
-                  <!-- Logo -->
-                     <h1 id="logo"><a href="/index.jsp">MY HOB!</a></h1>
 
                   <!-- Nav -->
                      <nav id="nav">
@@ -81,7 +78,10 @@
                                             
                         </ul>
                      </nav>
-
+				
+                  <!-- Logo -->
+                     <h1 id="logo"><a href="/index.jsp">MY HOB!</a></h1>
+				
                </div>
             </section>
 		<div id="my-Sidebar">

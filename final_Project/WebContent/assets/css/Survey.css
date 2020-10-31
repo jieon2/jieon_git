@@ -1,3 +1,81 @@
+
+
+#my-Sidebar {
+		
+        width: 250px;
+        padding: 20px;
+        margin-bottom: 20px;
+        float: left;
+        background-color: #e5e5e5;
+        border:solid 1px gray;
+        height:700px; 
+        margin-top:90px;            
+         }
+         
+@media screen and (max-width: 800px) {
+  #my-Sidebar {
+    display: none;
+  }
+}
+         
+ #my-Sidebar > ul{
+ list-style:none;
+ }
+
+
+#list{
+	margin:5em;
+}
+
+
+table tr th {
+	text-align: center;
+	font-weight: none;
+	border-bottom: 1px solid #d8d8d8;
+	border-right: 1px solid #d8d8d8;
+	color: #000000;
+	background: #f9f9f9;
+	padding: 10px;
+	font-weight: bold
+}
+ 
+table tbody td {
+	text-align: left;
+	border-bottom: 1px solid #d8d8d8;
+	padding: 15px;
+	text-align: center;
+}
+
+table tbody td ul li {
+	float: left;
+	margin-right: 5px;
+	margin-bottom: 5px}
+
+
+table tr th {
+	text-align: center;
+	font-weight: none;
+	border-bottom: 1px solid #d8d8d8;
+	border-right: 1px solid #d8d8d8;
+	color: #000000;
+	background: #f9f9f9;
+	padding: 10px;
+	font-weight: bold
+}
+ 
+table tbody td {
+	text-align: left;
+	border-bottom: 1px solid #d8d8d8;
+	padding: 15px;
+	text-align: center;
+}
+
+table tbody td ul li {
+	float: left;
+	margin-right: 5px;
+	margin-bottom: 5px}
+
+
 html,body {padding:0;margin:0;}
 .wrap {
   font:12px Arial, san-serif;

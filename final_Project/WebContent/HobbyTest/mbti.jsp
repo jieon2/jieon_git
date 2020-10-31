@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
  
 <!DOCTYPE html>
@@ -24,8 +25,6 @@ function mbtiCheck(){
 	document.getElementById("mbtiMsg").innerHTML = msg;
 	
 }
-
-
 </script>
 </head>
 <body style="overflow-x:hidden">
@@ -36,9 +35,6 @@ function mbtiCheck(){
 			<!-- Header -->
             <section id="header">
                <div class="container">
-
-                  <!-- Logo -->
-                     <h1 id="logo"><a href="/index.jsp">MY HOB!</a></h1>
 
                   <!-- Nav -->
                      <nav id="nav">
@@ -84,15 +80,18 @@ function mbtiCheck(){
                                             
                         </ul>
                      </nav>
-
+					
+                  <!-- Logo -->
+                     <h1 id="logo"><a href="/index.jsp">MY HOB!</a></h1>
+					
                </div>
             </section>
 				
  		<div id="my-Sidebar">
         	<h2>취미탐색</h2>
         		<ul>
-         		  	<li><a href="/community/free_board.jsp" >취미 검사</a></li>
-        		  	<li><a href="/community/info_board.jsp" >MBTI</a></li>
+         		  	<li><a href="/HobbyTest/Survey.jsp" >취미 검사</a></li>
+        		  	<li><a href="/HobbyTest/mbti.jsp" >MBTI</a></li>
         		</ul>
       	</div>
       	
@@ -139,7 +138,10 @@ function mbtiCheck(){
               </div>
             </div>
           </li>
-          
+         </ul>
+         </div>
+         </div>
+         </div> 
 <!-- partial -->
   <script  src="../assets/js/mbti.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>

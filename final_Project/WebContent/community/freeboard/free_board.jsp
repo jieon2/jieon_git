@@ -33,9 +33,7 @@
 		 keyField=request.getParameter("keyField");	
 		 keyword=request.getParameter("keyword");
 	}
-
 	articleList = dbPro.getArticles(startRow, pageSize, boardType, keyField, keyword);
-
 	if(articleList!=null){
 		count=dbPro.getArticleCount(boardType);
 	}
@@ -47,31 +45,27 @@
 	<title>MY HOB! 자유게시판</title>
 	<meta charset="utf-8" />
   	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-
-	<link rel="stylesheet" href="/assets/css/free_board.css">
+	<link rel="stylesheet" href="/assets/css/Board.css"/>
 </head>
 <body class="homepage is-preload">
 		<div id="page-wrapper">
-<!-- Header -->
+
+			<!-- Header -->
             <section id="header">
                <div class="container">
 
-                  <!-- Logo -->
-                     <h1 id="logo"><a href="/index.jsp">MY HOB!</a></h1>
-
-                  <!-- Nav -->
+                  <!-- Nav 진짜마지막 -->
                      <nav id="nav">
-                        <ul>
-                           <li><a href="/index.jsp"><span>About Us</span></a></li>
-                           <li>
-                              <a href="/HobbyTest/mbti.jsp"><span>Hobby</span></a>
+                        <ul class="mainnav">
+                        	<li><a href="/index.jsp"><span>About Us</span></a></li>
+                         	<li>
+                              <a href="/HobbyTest/Survey.jsp"><span>Hobby</span></a>
                               <ul>
                                  <li><a href="/HobbyTest/Survey.jsp">취미 검사</a></li>
                                  <li><a href="/HobbyTest/mbti.jsp">MBTI 검사</a></li>
                               </ul>
                            </li>
-                           
-                           <li><a href="/ServiceCenter/FAQboard/FAQ.jsp">
+                           <li><a href="/ServiceCenter/Noticeboard/notice.jsp">
                            <span>Service Center</span></a>
                               <ul>
                                  <li><a href="/ServiceCenter/Noticeboard/notice.jsp">공지사항</a></li>
@@ -79,16 +73,15 @@
                                  <li><a href="/ServiceCenter/Q&Aboard/Q&A.jsp">Q&A</a></li>
                               </ul>
                            </li>
-                           <li><a href="/community/infoboard/info_board.jsp">
+                           <li><a href="/community/freeboard/free_board.jsp">
                               <span>community</span></a>
                               <ul>
                                  <li><a href="/community/freeboard/free_board.jsp">자유게시판</a></li>
                                  <li><a href="/community/infoboard/info_board.jsp">정보게시판</a></li>
                               </ul>
-                           
                            </li>
-                        </ul> 
-                                <ul class="navtop"> 
+                        </ul>
+                        <ul class="navtop"> 
                         			<%if("admin".equals(session.getAttribute("id"))){ %> <!-- 관리자면 -->
 	                                	<li><a href="/admin/memberList.jsp">관리자메뉴</a></li>
 	                                	<li><a href="../Join/Logout.jsp">Logout</a></li>
@@ -103,7 +96,9 @@
                                             
                         </ul>
                      </nav>
-
+                     
+                      <!-- Logo-->
+                  <h1 id="logo"><a href="/index.jsp">MY HOB!</a></h1>
                </div>
             </section>
  		<div id="my-Sidebar">
@@ -194,11 +189,12 @@
 			<form name="search"  method="post" action="/community/freeboard/free_board.jsp">
 				<div>
 				<table>
+				
 					<tr>
 				  		<td>
-				  			<select name="keyField">
+				  			<select id="keyField"name="keyField">
 				  				<option value="" selected>전체</option>
-								<option value="writer">이름</option>
+								<option value="writer">작성자</option>
 								<option value="content">내용 </option>
 								<option value="subject">제목</option>	
 				  			</select>

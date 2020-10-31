@@ -23,15 +23,15 @@
     <div class='wrap'>
       <div class='content'>
         <h2>MY HOB!</h2>
-        <h2>Make Your Hobby!</h2>
-        <h5>당신의 취미를 찾아드립니다.</h5>
+        <h3>Make Your Hobby!</h3></br>
+        <h3>당신의 취미를 찾아드립니다.</h3>
       </div>
     </div>
   </section>
   <section>
     <div class='wrap'>
       <div class='content'>
-          <h2>취미별 카테고리</h2><br>
+          <h4>취미별 카테고리</h4><br>
           <img src="../images/image-1.jpg" width="300" height="300"><br><br>
         <p>마이홉 사이트는 취미별 카테고리가 있어서 사용자가 원하는 취미를 찾기 쉽게  특화되었습니다..<br>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo necessitatibus fuga deserunt beatae ut minima, nobis voluptates dolore suscipit corporis temporibus quaerat, vel amet magnam voluptas, aliquid nostrum ipsa fugiat.</p>
@@ -41,7 +41,8 @@
   <section>
     <div class='wrap'>
       <div class='content'>
-          <h2>Section 2</h2>
+          <h4>Section 2</h4>
+          <img src="../images/image-1.jpg" width="300" height="300"><br><br>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo necessitatibus fuga deserunt beatae ut minima, nobis voluptates dolore suscipit corporis temporibus quaerat, vel amet magnam voluptas, aliquid nostrum ipsa fugiat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo necessitatibus fuga deserunt beatae ut minima, nobis voluptates dolore suscipit corporis temporibus quaerat, vel amet magnam voluptas, aliquid nostrum ipsa fugiat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo necessitatibus fuga deserunt beatae ut minima, nobis voluptates dolore suscipit corporis temporibus quaerat, vel amet magnam voluptas, aliquid nostrum ipsa fugiat.</p>
       </div>
     </div>
@@ -49,7 +50,7 @@
   <section>
     <div class='wrap'>
       <div class='content'>
-        <h2>Section 3</h2>
+        <h4>Section 3</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo necessitatibus fuga deserunt beatae ut minima, nobis voluptates dolore suscipit corporis temporibus quaerat, vel amet magnam voluptas, aliquid nostrum ipsa fugiat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo necessitatibus fuga deserunt beatae ut minima, nobis voluptates dolore suscipit corporis temporibus quaerat, vel amet magnam voluptas, aliquid nostrum ipsa fugiat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo necessitatibus fuga deserunt beatae ut minima, nobis voluptates dolore suscipit corporis temporibus quaerat, vel amet magnam voluptas, aliquid nostrum ipsa fugiat.</p>
       </div>
     </div>
@@ -57,7 +58,7 @@
   <section>
     <div class='wrap'>
       <div class='content'>
-        <h2>Section 4</h2>
+        <h4>Section 4</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo necessitatibus fuga deserunt beatae ut minima, nobis voluptates dolore suscipit corporis temporibus quaerat, vel amet magnam voluptas, aliquid nostrum ipsa fugiat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo necessitatibus fuga deserunt beatae ut minima, nobis voluptates dolore suscipit corporis temporibus quaerat, vel amet magnam voluptas, aliquid nostrum ipsa fugiat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo necessitatibus fuga deserunt beatae ut minima, nobis voluptates dolore suscipit corporis temporibus quaerat, vel amet magnam voluptas, aliquid nostrum ipsa fugiat.</p>
       </div>
     </div>
@@ -66,6 +67,7 @@
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script><script  src="../assets/js/AboutUs.js"></script>
+</div>
 
 </body>
 </html>

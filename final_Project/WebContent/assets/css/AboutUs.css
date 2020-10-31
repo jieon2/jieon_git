@@ -27,23 +27,40 @@ section {
 }
 section:nth-child(odd) {
   background-color: #f7f7f7;
+  
+ 
+  
 }
 section.intro {
   text-align: center;
+  background-image:url("/assets/css/images/about1.jpg");
+  background-repeat:no-repeat;
 }
+
+
 section.intro h2, section.intro h5 {
-  font-weight: 300;
+  font-weight: 200px;
   margin-bottom: 10px;
 }
 
-h2, h3, h4, h5, h6, p {
+ h5, h6, p {
   color: #222;
 }
 
+
+h4{
+	font-size: 2vw;
+	color:#ed786a;;
+}
+h3{
+	font-size: 3vw;
+}
+
 h2 {
-  font-size: 8vw;
-  font-family: serif;
+  font-size: 7vw;
+  font-family: gulim;
   font-weight: bold;
+  color: #ed786a;;
 }
 
 p {
@@ -64,7 +81,7 @@ body.dragging section {
   right: 50px;
   height: 90%;
   width: 4px;
-  background: #222;
+  background: #ed786a;
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: vertical;
@@ -79,7 +96,7 @@ body.dragging section {
   cursor: pointer;
   height: 4px;
   width: 20px;
-  background: #222;
+  background: #ed786a;;
 }
 .slider-navigation .tick:before {
   content: "";
@@ -96,7 +113,7 @@ body.dragging section {
   position: absolute;
   top: 0;
   right: 0;
-  background: #222;
+  background: #ed786a;;
   color: white;
   font-weight: 300;
   font-size: 12px;

@@ -9,19 +9,17 @@
 <link rel="stylesheet" href="../assets/css/main.css"/>
 <style type="text/css"></style>
 <script>
-<%
+<%-- <%
    Object result = request.getAttribute("recommendation.getItemID()");   
-%>
+%> --%>
 </script>
 </head>
 <body class="homepage is-preload" style="overflow-x:hidden">
 <div id="page-wrapper">
-	<!-- Header -->
+   <!-- Header -->
             <section id="header">
                <div class="container">
 
-                  <!-- Logo -->
-                     <h1 id="logo"><a href="/index.jsp">MY HOB!</a></h1>
 
                   <!-- Nav -->
                      <nav id="nav">
@@ -62,16 +60,18 @@
                         <ul class="navtop">   
                                 
                                     <li><a href="/Join/LoginForm.jsp">Login</a></li>
-				                    <li><a href="/Join/insertForm.jsp">Join</a></li>
+                                <li><a href="/Join/insertForm.jsp">Join</a></li>
                                   <!-- <li><a class="fas fa-key" href="/MyPage/Profile.jsp"></a>-->
                                     <li><a href="/MyPage/Profile.jsp"><img src="../images/gear.png"></a></li>
                                                                             
                         </ul>
                      </nav>
-
+			
+                  <!-- Logo -->
+                     <h1 id="logo"><a href="/index.jsp">MY HOB!</a></h1>
                </div>
             </section>
-	
+   
 <!-- survey -->
 <div class="wrap">
   <h1 class="likert-header">적성검사</h1>
@@ -392,19 +392,19 @@
     
     <script>
 function survey(){
-var message = ["스포츠","사진/영상","DIY","음악","미술","요리","언어"];
-var a = Math.floor(Math.random() * message.length)
-window.alert("당신에게 "+message[a]+" 취미를 추천해드립니다.");
+	var hobby = ["스포츠","사진/영상","DIY","음악","미술","요리","언어"];
+	var a = Math.floor(Math.random() * hobby.length)
+	window.alert("당신에게 "+hobby[a]+" 취미를 추천해드립니다.");
 }
 </script>
-  							<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-							<script src="assets/js/jquery.min.js"></script>
-							<script src="assets/js/jquery.dropotron.min.js"></script>
-							<script src="assets/js/browser.min.js"></script>
-							<script src="assets/js/breakpoints.min.js"></script>
-							<script src="assets/js/util.js"></script>
-							<script src="assets/js/main.js"></script>
-							<!-- partial -->
+                       <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+                     <script src="assets/js/jquery.min.js"></script>
+                     <script src="assets/js/jquery.dropotron.min.js"></script>
+                     <script src="assets/js/browser.min.js"></script>
+                     <script src="assets/js/breakpoints.min.js"></script>
+                     <script src="assets/js/util.js"></script>
+                     <script src="assets/js/main.js"></script>
+                     <!-- partial -->
     </div>
 </body>
 </html>
