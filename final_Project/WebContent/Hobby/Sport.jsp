@@ -83,7 +83,7 @@
                    <div class="card">
                       <a href="/HobbyDetail/SPORTS_01.jsp?classId=SPORTS_01" class="image featured"><img src="/assets/css/images/SPORTS_01.jpg" alt="" /></a>
                       <header>
-                        <h3>축구, 아직도 관람만 하시나요?</h3>
+                        <h3>요가로 몸과 마음 바로잡기</h3>
                      </header>
                             <p>월 53,000원 (6개월)</p>
                    </div>
@@ -92,7 +92,7 @@
                    <div class="card">
                       <a href="/HobbyDetail/SPORTS_02.jsp?classId=SPORTS_02" class="image featured"><img src="/assets/css/images/SPORTS_02.jpg" alt="" /></a>
                       <header>
-                        <h3>집에서도 가능한 요가 스트레칭</h3>
+                        <h3>운동에도 유행이 있다! 필라테스로 트렌드에 맞는 운동을 즐겨요</h3>
                      </header>
                             <p>월 38,000원 (6개월)</p>
                    </div>
@@ -101,7 +101,7 @@
                    <div class="card">
                       <a href="/HobbyDetail/SPORTS_03.jsp?classId=SPORTS_03" class="image featured"><img src="/assets/css/images/SPORTS_03.jpg" alt="" /></a>
                       <header>
-                        <h3>테니스로 재미있게 체력 기르기</h3>
+                        <h3>근력과 체력 향상을 위한 헬스</h3>
                      </header>
                             <p>월 42,000원 (6개월)</p>
                    </div>

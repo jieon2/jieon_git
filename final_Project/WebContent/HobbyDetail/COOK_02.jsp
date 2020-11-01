@@ -8,7 +8,7 @@
    <title>COOK_02</title>
    <meta charset="utf-8" />
      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-   <link rel="stylesheet" href="../assets/css/Hobby.css">
+   <link rel="stylesheet" href="/assets/css/HobbyDetail.css">
 <%
 	String id= (String)session.getAttribute("id");
 	String classId = (String)request.getParameter("classId");
@@ -109,35 +109,28 @@
 				<!--class="image featured">-->
 				<a><img width= 800px height= 600px src="/assets/css/images/COOK_02.jpg" alt=""/></a>
 				<br>
-				<h3 class="classExplanation">오븐 없이 전자레인지와 밥솥을 이용한 베이킹 클래스입니다.</h3>
+				<h3 class="classExplanation">슈크림과 딸기를 곁들여 더욱 맛있는 페스츄리를 만들어 봅니다.</h3>
 				<hr>
 				<h3>클래스 정보</h3>
 				<text>
-					난이도 : 중<br>
-					강의 주제 : 8개<br>
-					강의 개수 : 42개<br>
-					총 강의시간 : 37시간<br>
+					난이도 : 하<br>
+					강의 주제 : 1개<br>
+					강의 개수 : 1개<br>
+					총 강의시간 : 1시간<br>
 				</text>
 				<hr>
 				<h3>커리큘럼</h3>
 				<text>
 					01. 강의소개, 준비물 소개<br>
-					02. 전자레인지를 이용한 스콘 굽기<br>
-					03. 전자레인지를 이용한 파운드 굽기<br>
-					04. 전자레인지를 이용한 쿠키 굽기<br>
-					05. 밥솥을 이용한 머핀 굽기<br>
-					06. 밥솥을 이용한 케이크 시트 굽기<br>
-					07. 발효기 없기 빵 반죽 발효하기<br>
-					08. 집에 있는 재료로 디저트 데코하기<br>
+					02. 슈크림과 딸기를 곁들여 맛있게 완성하는 페스츄리<br>
 				</text>
 				<hr>
 				<h3>이 클래스를 완강하면,</h3>
 				<text>
-					집에서 오븐 없이도 다양한 베이킹을 할 수 있어요.<br>
-					베이킹 기초지식을 익힐 수 있어요.<br>
+					손재주도 없고 요리를 못해도 누구나 쉽게 제과를 체험할 수 있어요.<hr>
 				</text>
 				<% if(entry_yn!="Y"){%>
-					<form method="post" action="/HobbyDtail/myClassPro.jsp" name="myClass">
+					<form id="getclass" method="post" action="/HobbyDetail/myClassPro.jsp" name="myClass">
 						<input type="submit" value="클래스 신청하기" id="submit" name="entryBtn" >
 						<input type="hidden" name="class_id" value="COOK_02">
 						<input type="hidden" name="entry_yn" value="Y">
@@ -146,7 +139,7 @@
 
 					<input type="button" value="수강하기" id="playBtn" name="playBtn" >
 				<%}%>
-				<form method="post" action="/HobbyDtail/myClassPro.jsp" name="myClass">
+				<form method="post" action="/HobbyDetail/myClassPro.jsp" name="myClass">
 					<input type="submit" value="좋아요" id="submit" name="likeYnBtn" >
 					<input type="hidden" name="class_id" value="COOK_02">
 					<input type="hidden" name="like_yn" value="Y">
@@ -181,7 +174,7 @@
 	   });
 	   
 	   $('#playBtn').click( function() {
-		    window.open("https://www.youtube.com/watch?v=WSi9yG_9IBo", "유튜브", "width=800, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes" );  
+		    window.open("https://www.youtube.com/watch?v=mPqPpIGKsHY", "유튜브", "width=800, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes" );  
 	   } );
    </script>
 </html>

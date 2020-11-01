@@ -5,7 +5,7 @@
 
 <html>
 <head>
-   <title>DIY_03</title>
+   <title>COOK_04</title>
    <meta charset="utf-8" />
      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
    <link rel="stylesheet" href="/assets/css/HobbyDetail.css">
@@ -104,39 +104,39 @@
 				<!-- Post -->
 				<article class="box post">
 								
-				<h2>피부 트러블 걱정 없는 수제비누 만들기</h2>
+				<h2>아침부터 간식까지 요거트 활용백서</h2>
 				
 				<!--class="image featured">-->
-				<a><img width= 800px height= 600px src="/assets/css/images/DIY_03.jpg" alt=""/></a>
+				<a><img width= 800px height= 600px src="/assets/css/images/COOK_04.jpg" alt=""/></a>
 				<br>
-				<h3 class="classExplanation">건강한 성분만을 채운 수제 비누로 피부 건강 챙기세요!</h3>
+				<h3 class="classExplanation">요거트를 이용한해 여러가지 음식을 만들어봐요!</h3>
 				<hr>
 				<h3>클래스 정보</h3>
 				<text>
-					난이도 : 중<br>
+					난이도 : 하<br>
 					강의 주제 : 5개<br>
-					강의 개수 : 36개<br>
-					총 강의시간 : 24시간<br>
+					강의 개수 : 28개<br>
+					총 강의시간 : 30시간<br>
 				</text>
 				<hr>
 				<h3>커리큘럼</h3>
 				<text>
 					01. 강의소개, 준비물 소개<br>
-					02. 비누 성분 제대로 알기<br>
-					03. 수분 충전을 위한 천연 수제비누 만들기<br>
-					04. 트러블 관리를 위한 천연 수제비누 만들기<br>
-					05. 가을겨울 각질 관리를 위한 천연 수제비누 만들기<br>
+					02. 요거트의 종류와 특징<br>
+					03. 가당 요거트로 맛있는 간식 만들기<br>
+					04. 무가당 요거트로 건강한 간식 만들기<br>
+					05. 그릭 요거트로 든든한 아침 만들기<br>
 				</text>
 				<hr>
 				<h3>이 클래스를 완강하면,</h3>
 				<text>
-					비누의 성분에 대해 이해하고, 자신에게 맞는 비누를 선택할 수 있어요.<br>
-					나만의 맞춤 수제비누를 만들 수 있어요.<hr>
+					요거트의 여러 종류를 알고, 필요에 따라 선택할 수 있어요.<br>
+					요거트를 다양하게 활용해 맛있게 즐길 수 있어요.<hr>
 				</text>
 				<% if(entry_yn!="Y"){%>
 					<form id="getclass" method="post" action="/HobbyDetail/myClassPro.jsp" name="myClass">
 						<input type="submit" value="클래스 신청하기" id="submit" name="entryBtn" >
-						<input type="hidden" name="class_id" value="DIY_03">
+						<input type="hidden" name="class_id" value="COOK_04">
 						<input type="hidden" name="entry_yn" value="Y">
 					</form>
 				<%}else{ %>
@@ -145,7 +145,7 @@
 				<%}%>
 				<form method="post" action="/HobbyDetail/myClassPro.jsp" name="myClass">
 					<input type="submit" value="좋아요" id="submit" name="likeYnBtn" >
-					<input type="hidden" name="class_id" value="DIY_03">
+					<input type="hidden" name="class_id" value="COOK_04">
 					<input type="hidden" name="like_yn" value="Y">
 				</form>	
 				</article>
@@ -178,7 +178,7 @@
 	   });
 	   
 	   $('#playBtn').click( function() {
-		    window.open("https://www.youtube.com/watch?v=BxfybMYU8v8", "유튜브", "width=800, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes" );  
+		    window.open("https://www.youtube.com/watch?v=5LS4uRUaejE", "유튜브", "width=800, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes" );  
 	   } );
    </script>
 </html>

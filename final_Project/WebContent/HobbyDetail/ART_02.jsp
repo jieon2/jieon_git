@@ -8,7 +8,7 @@
    <title>ART_02</title>
    <meta charset="utf-8" />
      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-   <link rel="stylesheet" href="../assets/css/Hobby.css">
+   <link rel="stylesheet" href="/assets/css/HobbyDetail.css">
 <%
 	String id= (String)session.getAttribute("id");
 	String classId = (String)request.getParameter("classId");
@@ -135,10 +135,10 @@
 				<text>
 					그림을 그릴 때 고려해야할 사항들을 알 수 있어요.<br>
 					보이지 않는 대상을 그릴 때에도 망설임 없이 그릴 수 있어요.<br>
-					손그림을 그리는 데에 자신감을 가질 수 있어요.<br>
+					손그림을 그리는 데에 자신감을 가질 수 있어요.<hr>
 				</text>
 				<% if(entry_yn!="Y"){%>
-					<form method="post" action="/HobbyDtail/myClassPro.jsp" name="myClass">
+					<form id="getclass" method="post" action="/HobbyDetail/myClassPro.jsp" name="myClass">
 						<input type="submit" value="클래스 신청하기" id="submit" name="entryBtn" >
 						<input type="hidden" name="class_id" value="ART_02">
 						<input type="hidden" name="entry_yn" value="Y">
@@ -147,7 +147,7 @@
 
 					<input type="button" value="수강하기" id="playBtn" name="playBtn" >
 				<%}%>
-				<form method="post" action="/HobbyDtail/myClassPro.jsp" name="myClass">
+				<form method="post" action="/HobbyDetail/myClassPro.jsp" name="myClass">
 					<input type="submit" value="좋아요" id="submit" name="likeYnBtn" >
 					<input type="hidden" name="class_id" value="ART_02">
 					<input type="hidden" name="like_yn" id="like_yn" value="Y">
@@ -184,7 +184,7 @@
 	   });
 	   
 	   $('#playBtn').click( function() {
-		    window.open("https://www.youtube.com/watch?v=irtQEM739nM", "유튜브", "width=800, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes" );  
+		    window.open("https://www.youtube.com/watch?v=3xnct5F96kU", "유튜브", "width=800, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes" );  
 	   } );
    </script>
 </html>

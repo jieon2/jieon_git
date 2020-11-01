@@ -144,7 +144,7 @@
 
 					<input type="button" value="수강하기" id="playBtn" name="playBtn" >
 				<%}%>
-				<form id="getheart" method="post" action="/HobbyDetail/myClassPro.jsp" name="myClass">
+				<form method="post" action="/HobbyDetail/myClassPro.jsp" name="myClass">
 					<input type="submit" value="좋아요" id="submit" name="likeYnBtn" >
 					<input type="hidden" name="class_id" value="ART_04">
 					<input type="hidden" name="like_yn" id="like_yn" value="Y">
@@ -181,7 +181,7 @@
 	   });
 	   
 	   $('#playBtn').click( function() {
-		    window.open("https://www.youtube.com/watch?v=irtQEM739nM", "유튜브", "width=800, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes" );  
+		    window.open("https://www.youtube.com/watch?v=0YxuYezKhGk", "유튜브", "width=800, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes" );  
 	   } );
    </script>
 </html>
