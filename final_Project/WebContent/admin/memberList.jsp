@@ -113,8 +113,8 @@
 		<div id="list">
 			<tr>
 				<td><%=id %>님 환영합니다.</td>
-				<td><a href="../admin/boardList.jsp" >전체 게시물</a></td>
-				<td><a href="../admin/memberList.jsp">회원 목록</a></td>
+				<td><a href="/admin/boardList.jsp" >전체 게시물</a></td>
+				<td><a href="/admin/memberList.jsp">회원 목록</a></td>
 				<td><a href="../index.jsp">메인으로</a></td>
 			</tr>
 		 	<p align="center">회원목록(전체 회원수:<%=count%>)</p>

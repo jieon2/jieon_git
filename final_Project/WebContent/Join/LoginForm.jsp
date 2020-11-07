@@ -4,17 +4,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Login</title>
+<title>Insert title here</title>
 <link rel="stylesheet" href="../assets/css/LoginStyle.css" type="text/css"/>
-
+<link rel="stylesheet" href="../assets/css/main.css" type="text/css"/>
 
 </head>
 <body>
-<!-- Header -->
+
             <section id="header">
                <div class="container">
 
-                
+                  <!-- Logo -->
+                     <h1 id="logo"><a href="/index.jsp">MY HOB!</a></h1>
+
                   <!-- Nav -->
                      <nav id="nav">
                         <ul>
@@ -22,7 +24,7 @@
                            <li>
                               <a href="/HobbyTest/mbti.jsp"><span>Hobby</span></a>
                               <ul>
-                                 <li><a href="/HobbyTest/Survey.jsp">취미 검사</a></li>
+                                 <li><a href="/HobbyTest/mbti.jsp">취미 검사</a></li>
                                  <li><a href="/HobbyTest/mbti.jsp">MBTI 검사</a></li>
                               </ul>
                            </li>
@@ -43,25 +45,9 @@
                               </ul>
                            
                            </li>
-                        </ul> 
-                                <ul class="navtop"> 
-                        			<%if("admin".equals(session.getAttribute("id"))){ %> <!-- 관리자면 -->
-	                                	<li><a href="/admin/memberList.jsp">관리자메뉴</a></li>
-	                                	<li><a href="../Join/Logout.jsp">Logout</a></li>
-	                                	
-                                	<%}else if(session.getAttribute("id")!=null){ %>      <!-- 아이디가 있으면 -->
-	                                	<li><a href="../Join/Logout.jsp">Logout</a></li>
-	                                	<li><a class="fas fa-user fa-1.5x" href="/MyPage/Profile.jsp"></a></li>
-                                	<%}else{%>       
-                                	<li><a href="/Join/LoginForm.jsp">Login</a></li>
-				                    <li><a href="/Join/insertForm.jsp">Join</a></li>
-				                    <%} %>
-                                            
                         </ul>
                      </nav>
-				  <!-- Logo -->
-                     <h1 id="logo"><a href="/index.jsp">MY HOB!</a></h1>
-				
+
                </div>
             </section>
     <div align="center">        

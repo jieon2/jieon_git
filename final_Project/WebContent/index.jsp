@@ -18,11 +18,13 @@
             <section id="header">
                <div class="container">
 
-                  
+                  <!-- Logo -->
+                     <h1 id="logo"><a href="/index.jsp">MY HOB!</a></h1>
+
                   <!-- Nav -->
                      <nav id="nav">
                         <ul>
-                           <li><a href="/AboutUs.jsp"><span>About Us</span></a></li>
+                           <li><a href="/index.jsp"><span>About Us</span></a></li>
                            <li>
                               <a href="/HobbyTest/mbti.jsp"><span>Hobby</span></a>
                               <ul>
@@ -63,9 +65,7 @@
                                             
                         </ul>
                      </nav>
-					<!-- Logo -->
-                     <h1 id="logo"><a href="/index.jsp">MY HOB!</a></h1>
-					
+
                </div>
             </section>
 	
@@ -109,13 +109,13 @@
 	<section class="c_wrap">
 <div class="c_container">
   <ul class="c_menu">
-  	<li class="menu-item"><a href="/Hobby/Art.jsp"><img src="/images/category_art.png" width="100"></a></li>
-    <li class="menu-item"><a href="/Hobby/Cook.jsp"><img src="/images/category_cook.png" width="100"></a></li>
-    <li class="menu-item"><a href="/Hobby/DIY.jsp"><img src="/images/category_DIY.png" width="100"></a></li>
-    <li class="menu-item"><a href="/Hobby/Language.jsp"><img src="/images/category_language.png" width="100"></a></li>
     <li class="menu-item"><a href="/Hobby/Music.jsp"><img src="/images/category_music.png" width="100"></a></li>
-    <li class="menu-item"><a href="/Hobby/PhotoNVideo.jsp"><img src="/images/category_camera.png" width="100"></a></li>
+    <li class="menu-item"><a href="/Hobby/Cook.jsp"><img src="/images/category_cook.png" width="100"></a></li>
+    <li class="menu-item"><a href="/Hobby/Art.jsp"><img src="/images/category_art.png" width="100"></a></li>
+    <li class="menu-item"><a href="/Hobby/DIY.jsp"><img src="/images/category_DIY.png" width="100"></a></li>
     <li class="menu-item"><a href="/Hobby/Sport.jsp"><img src="/images/category_sports.png" width="100"></a></li>
+    <li class="menu-item"><a href="/Hobby/PhotoNVideo.jsp"><img src="/images/category_camera.png" width="100"></a></li>
+    <li class="menu-item"><a href="/Hobby/Language.jsp"><img src="/images/category_language.png" width="100"></a></li>
     
   </ul>
 </div>
@@ -254,12 +254,6 @@
 	</section>
 	
 	
-	<!-- user -->
-	
-  
-
-
-
 	
 	<!-- Best -->
 	<!-- Footer -->

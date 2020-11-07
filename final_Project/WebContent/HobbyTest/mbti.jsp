@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
  
 <!DOCTYPE html>
@@ -10,24 +9,9 @@
 <link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
 
 <link rel="stylesheet" href="../assets/css/mbti.css">
-<script>
-function mbtiCheck(){
-	var result=document.getElementById('my_mbti').value;
-	
-	var msg="";
-	if(result=='INFP'){
-		msg = "당신에게 맞는 취미는 다꾸입니다.";
-	}else if(result=='INFP'){
-		msg = "당신에게 맞는 취미는 다꾸입니다.";
-	}else if(result=='INFP'){
-		msg = "당신에게 맞는 취미는 다꾸입니다.";
-	}
-	document.getElementById("mbtiMsg").innerHTML = msg;
-	
-}
-</script>
+<link rel="stylesheet" href="../assets/css/main.css">
 </head>
-<body style="overflow-x:hidden">
+
 <div class="homepage is-preload">
 		<div id="page-wrapper">
 
@@ -35,6 +19,9 @@ function mbtiCheck(){
 			<!-- Header -->
             <section id="header">
                <div class="container">
+
+                  <!-- Logo -->
+                     <h1 id="logo"><a href="/index.jsp">MY HOB!</a></h1>
 
                   <!-- Nav -->
                      <nav id="nav">
@@ -80,10 +67,7 @@ function mbtiCheck(){
                                             
                         </ul>
                      </nav>
-					
-                  <!-- Logo -->
-                     <h1 id="logo"><a href="/index.jsp">MY HOB!</a></h1>
-					
+
                </div>
             </section>
 				
@@ -115,7 +99,7 @@ function mbtiCheck(){
               </div>
               <div class="column-xs-12 column-md-10">
                 <div class="image-holder">
-                  <a class="x" href="https://www.16personalities.com/ko"><img src="../images/mbti-1.jpg"></a>
+                  <img src="../images/mbti-1.jpg">
                 </div>
                 <div class="grid">
                   <div class="column-xs-12 column-md-9">
@@ -124,12 +108,9 @@ function mbtiCheck(){
                         <h1 class="m_title"><span class="underline">MBTI</span></h1>
                       </a>
                     </div>
-                
-                
-                    <form action="" name="mbti">
-                    	<h2>당신의 MBTI는?</h2></br>
-                   		<input type="text" id="my_mbti" name="my_mbti" style=width:100%; placeholder="mbti를 입력해주세요"><input type="button" value="입력" onClick="mbtiCheck()"><br>
-                  		
+                    <form action="" name="mbti">당신의 MBTI는?</p>
+                   		<input type="text" id="my_mbti" name="my_mbti" style=width:100%; placeholder="MBTI를 대문자로 입력해주세요.">
+                  		<input type="button" value="입력" onClick="mbtiCheck()"><br>
                   		<span id='mbtiMsg' value='test용'/>
 
                    </form>
@@ -138,14 +119,139 @@ function mbtiCheck(){
               </div>
             </div>
           </li>
-         </ul>
-         </div>
-         </div>
-         </div> 
+          <li class="slider-item">
+            <div class="grid vertical">
+              <div class="column-xs-12 column-md-2 hide-mobile">
+                <div class="intro">
+                  <a href="#">
+                    <h1 class="m_title"><span class="underline">Explore Kyoto</span></h1>
+                  </a>
+                </div>
+              </div>
+              <div class="column-xs-12 column-md-10">
+                <div class="image-holder">
+                  <img src="https://source.unsplash.com/Pz3EHf-KJfc">
+                </div>
+                <div class="grid">
+                  <div class="column-xs-12 column-md-9">
+                    <div class="intro show-mobile">
+                      <a href="#">
+                        <h1 class="m_title"><span class="underline">Explore Kyoto</span></h1>
+                      </a>
+                    </div>
+                    <p class="description">Kyoto is famous for its numerous classical Buddhist temples, gardens, imperial palaces, Shinto shrines and traditional wooden houses.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="slider-item">
+            <div class="grid vertical">
+              <div class="column-xs-12 column-md-2 hide-mobile">
+                <div class="intro">
+                  <a href="#">
+                     <h1 class="m_title"><span class="underline">Explore Osaka</span></h1>
+                  </a>
+                </div>
+              </div>
+              <div class="column-xs-12 column-md-10">
+                <div class="image-holder">
+                  <img src="https://source.unsplash.com/peYW3VwICpE">
+                </div>
+                <div class="grid">
+                  <div class="column-xs-12 column-md-9">
+                    <div class="intro show-mobile">
+                      <a href="#">
+                        <h1 class="m_title"><span class="underline">Explore Osaka</span></h1>
+                      </a>
+                    </div>
+                    <p class="description">Osaka is a large port city and commercial center known for its modern architecture, nightlife and hearty street food.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+            
+          <li class="slider-item">
+            <div class="grid vertical">
+              <div class="column-xs-12 column-md-2 hide-mobile">
+                <div class="intro">
+                  <a href="#">
+                    <h1 class="m_title"><span class="underline">Explore Hokkaido</span></h1>
+                  </a>
+                </div>
+              </div>
+              <div class="column-xs-12 column-md-10">
+                <div class="image-holder">
+                  <img src="https://source.unsplash.com/VmeOZQjTVGE">
+                </div>
+                <div class="grid">
+                  <div class="column-xs-12 column-md-9">
+                    <div class="intro show-mobile">
+                      <a href="#">
+                        <h1 class="m_title"><span class="underline">Explore Hokkaido</span></h1>
+                      </a>
+                    </div>
+                    <p class="description">Hokkaido, the northernmost of Japan’s main islands, is known for its volcanoes, natural hot springs ("onsen") and ski areas.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+    
+          </div>
+      </div>
+    </div>
+  </div>
+</main>
+   
 <!-- partial -->
   <script  src="../assets/js/mbti.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-
+<script>
+function mbtiCheck(){
+	var result=document.getElementById('my_mbti').value;
+	
+	var msg="";
+	if(result=='INTJ'){
+		msg = "언어";
+	}else if(result=='INTP'){
+		msg = "예술";
+	}else if(result=='INFJ'){
+		msg = "DIY";
+	}else if(result=='INFP'){
+		msg = "예술";
+	}else if(result=='ISTJ'){
+		msg = "DIY";
+	}else if(result=='ISFJ'){
+		msg = "사진/영상";
+	}else if(result=='ISTP'){
+		msg = "요리";
+	}else if(result=='ISFP'){
+		msg = "예술";
+	}else if(result=='ENTJ'){
+		msg = "스포츠";
+	}else if(result=='ENTP'){
+		msg = "사진/영상";
+	}else if(result=='ENFJ'){
+		msg = "스포츠";
+	}else if(result=='ENFP'){
+		msg = "음악";
+	}else if(result=='ESTJ'){
+		msg = "언어";
+	}else if(result=='ESFJ'){
+		msg = "스포츠";
+	}else if(result=='ESTP'){
+		msg = "음악";
+	}else if(result=='ESFP'){
+		msg = "음악";
+	}else
+		msg1="정확한 MBTI를 입력해주세요.";
+	
+	document.getElementById("mbtiMsg").innerHTML = "당신에게 " +msg+" 관련된 취미를 추천해드립니다.";
+	document.getElementById("mbtiMsg").innerHTML = msg1;
+}
+</script>
 </div>
 	
 </body>
