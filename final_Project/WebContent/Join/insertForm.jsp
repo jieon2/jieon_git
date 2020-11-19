@@ -69,13 +69,11 @@ function checkValue(){
 		<section id="header">
                <div class="container">
 
-                  <!-- Logo-->
-                  <h1 id="logo"><a href="/index.jsp">MY HOB!</a></h1>
-                  
+                 
                   <!-- Nav -->
                      <nav id="nav">
                         <ul class="mainnav">
-                        	<li><a href="/index.jsp"><span>About Us</span></a></li>
+                        	<li><a href="/AboutUs/AboutUs.jsp"><span>About Us</span></a></li>
                          	<li>
                               <a href="/HobbyTest/mbti.jsp"><span>Hobby</span></a>
                               <ul>
@@ -115,7 +113,9 @@ function checkValue(){
                                             
                         </ul>
                      </nav>
-
+					 <!-- Logo-->
+                  <h1 id="logo"><a href="/index.jsp">MY HOB!</a></h1>
+                  
                </div>
             </section>
 <div align="center">

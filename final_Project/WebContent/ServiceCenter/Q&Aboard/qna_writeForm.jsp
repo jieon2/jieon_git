@@ -50,7 +50,7 @@ function boardCheck(){
                   <!-- Nav -->
                      <nav id="nav">
                         <ul>
-                           <li><a href="/index.jsp"><span>About Us</span></a></li>
+                           <li><a href="/AboutUs/AboutUs.jsp"><span>About Us</span></a></li>
                            <li>
                               <a href="/HobbyTest/mbti.jsp"><span>Hobby</span></a>
                               <ul>
@@ -79,10 +79,10 @@ function boardCheck(){
                                 <ul class="navtop"> 
                         			<%if("admin".equals(session.getAttribute("id"))){ %> <!-- 관리자면 -->
 	                                	<li><a href="/admin/memberList.jsp">관리자메뉴</a></li>
-	                                	<li><a href="../Join/Logout.jsp">Logout</a></li>
+	                                	<li><a href="/Join/Logout.jsp">Logout</a></li>
 	                                	
                                 	<%}else if(session.getAttribute("id")!=null){ %>      <!-- 아이디가 있으면 -->
-	                                	<li><a href="../Join/Logout.jsp">Logout</a></li>
+	                                	<li><a href="/Join/Logout.jsp">Logout</a></li>
 	                                	<li><a class="fas fa-user fa-1.5x" href="/MyPage/Profile.jsp"></a></li>
                                 	<%}else{%>       
                                 	<li><a href="/Join/LoginForm.jsp">Login</a></li>
@@ -164,6 +164,6 @@ function boardCheck(){
 </div>
 </div>
 </section>
-
+<a style="display:scroll;position:fixed;bottom:10px;right:10px;" href="#" title=”맨위로"><img src="/images/up-arrow.png"></a>
 </body>
 </html>

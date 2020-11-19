@@ -30,7 +30,7 @@
 	Connection conn=null;
 	PreparedStatement pstmt=null;
 	try{
-		String url="jdbc:mysql://localhost:3306/bdbjsp?serverTimezone=UTC";
+		String url="jdbc:mysql://127.0.0.1:3306/bdbjsp?serverTimezone=UTC";
 		String dbId="root";
 		String dbPass="1234";
 		Class.forName("com.mysql.cj.jdbc.Driver");

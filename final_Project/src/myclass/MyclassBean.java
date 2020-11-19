@@ -27,7 +27,7 @@ public class MyclassBean {
 	    	PreparedStatement pstmt=null;
 	    	
 	    	String jdbc_driver = "com.mysql.cj.jdbc.Driver";
-	    	String jdbc_url  = "jdbc:mysql://localhost:3306/bdbjsp?characterEncoding=UTF-8&serverTimezone=UTC";
+	    	String jdbc_url  = "jdbc:mysql://127.0.0.1:3306/bdbjsp?characterEncoding=UTF-8&serverTimezone=UTC";
 	    	
 	    	
 	    		try {

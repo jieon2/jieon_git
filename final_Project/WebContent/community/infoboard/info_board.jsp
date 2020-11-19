@@ -26,6 +26,7 @@
     List<BoardDataBean> articleList = null; 
     
     BoardDBBean dbPro = BoardDBBean.getInstance();
+
     String boardType="info";
 	String keyField="";
 	String keyword="";
@@ -34,6 +35,7 @@
 		 keyField=request.getParameter("keyField");	
 		 keyword=request.getParameter("keyword");
 	}
+
 	articleList = dbPro.getArticles(startRow, pageSize, boardType, keyField, keyword);
 	
 	if(articleList!=null){
@@ -58,7 +60,7 @@
                   <!-- Nav 진짜마지막 -->
                      <nav id="nav">
                         <ul class="mainnav">
-                        	<li><a href="/index.jsp"><span>About Us</span></a></li>
+                        	<li><a href="/AboutUs/AboutUs.jsp"><span>About Us</span></a></li>
                          	<li>
                               <a href="/HobbyTest/Survey.jsp"><span>Hobby</span></a>
                               <ul>
@@ -113,7 +115,7 @@
 			<div class="container">
 		 		<div id="content">
 		 		
-		 	<p>글목록(전체 글:<%=count%>)</p>
+		 	<h2>정보 게시판</h2>
 			
 			<% if (count == 0) { %>
 			
@@ -205,6 +207,9 @@
 				  	</tr>
 				  	</table>
 			  	</div>
+			  	
+			  	<a style="display:scroll;position:fixed;bottom:10px;right:10px;" href="#" title=”맨위로"><img src="/images/up-arrow.png"></a>
+			  	
 			</form>	
 			  	
 			  <div style="text-align:center">	

@@ -50,7 +50,7 @@ function boardCheck(){
                   <!-- Nav -->
                      <nav id="nav">
                         <ul>
-                           <li><a href="/index.jsp"><span>About Us</span></a></li>
+                           <li><a href="/AboutUs/AboutUs.jsp"><span>About Us</span></a></li>
                            <li>
                               <a href="/HobbyTest/mbti.jsp"><span>Hobby</span></a>
                               <ul>
@@ -108,8 +108,8 @@ function boardCheck(){
 		 		
 
 <h3> 글쓰기 </h3>
-<form method="post" action="/community/freeboard/writePro.jsp" name="free" onsubmit="return boardCheck()">
-<input type="hidden" name="boardType" value="free">
+<form method="post" action="/community/infoboard/info_writePro.jsp" name="info" onsubmit="return boardCheck()">
+<input type="hidden" name="boardType" value="info">
 <input type="hidden" name="num" value="<%=num%>">
 <input type="hidden" name="ref" value="<%=ref%>">
 <input type="hidden" name="re_step" value="<%=re_step%>">
@@ -159,6 +159,6 @@ function boardCheck(){
 </div>
 </div>
 </section>
-
+<a style="display:scroll;position:fixed;bottom:10px;right:10px;" href="#" title=”맨위로"><img src="/images/up-arrow.png"></a>
 </body>
 </html>

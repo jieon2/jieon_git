@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Arvo:700");
 
 #my-Sidebar {
+      
         width: 250px;
         padding: 20px;
         margin-bottom: 20px;
@@ -9,8 +10,19 @@
         background-color: #e5e5e5;
         border:solid 1px gray;
         height:700px; 
-        margin-top:90px; 
-      }
+        margin-top:90px;            
+         }
+         
+@media screen and (max-width: 800px) {
+  #my-Sidebar {
+    display: none;
+  }
+}
+         
+ #my-Sidebar > ul{
+ list-style:none;
+ }
+
  
  * { 
    margin: 0; padding: 0;
@@ -1481,7 +1493,7 @@ input, select, textarea {
 				}
 
 					.row > * {
-						padding: 30px 0 0 30px;
+						padding: 10px;
 					}
 
 					.row.gtr-uniform {
@@ -2973,19 +2985,27 @@ c_wrap {
 		/* Header */
 
 			#header > .container {
-				padding: 6em 0 4em 0;
+				padding: 6em 0 6em 0;
 			}
 
 			#header h1 {
-				font-size: 2em;
+				font-size: 1em;
 				letter-spacing: 8px;
-				line-height: 1.325em;
+				line-height: 1.325em;			
+                margin-left: 3em;
+			
 			}
+		
 
 			#header p {
 				margin: 1.25em 0 0 0;
 				letter-spacing: 2px;
 			}
+			
+		    h1 #logo {
+				margin:0;
+			}
+			
 
 		/* Banner */
 
@@ -3360,7 +3380,7 @@ c_wrap {
 		/* Main */
 
 			#main {
-				padding: 4em 0;
+				padding: 4em 0 0 1em;
 			}
 
 		/* Footer */
@@ -3396,6 +3416,12 @@ c_wrap {
 
 			#header > .container {
 				padding: 10em 0 7em 0;
+			}
+			
+			
+			#header h1 {
+				font-size: 1.5em;
+                margin-left: 5em;
 			}
 
 		/* Nav */
@@ -3590,163 +3616,3 @@ c_wrap {
 
 	}
 
-/* Small */
-
-	@media screen and (max-width: 736px) {
-
-		/* Basic */
-
-			body, input, textarea, select {
-				font-size: 11pt;
-			}
-
-			h2, h3, h4, h5, h6 {
-				font-size: 1.2em;
-				letter-spacing: 2px;
-				text-align: center;
-				margin: 0 0 1em 0;
-			}
-
-				h2 br, h3 br, h4 br, h5 br, h6 br {
-					display: none;
-				}
-
-		/* Image */
-
-			.image.featured {
-				margin: 0 0 1.5em 0;
-			}
-
-			.image.left {
-				max-width: 35%;
-			}
-
-			.image.right {
-				max-width: 35%;
-			}
-
-		/* Button */
-
-			input[type="button"],
-			input[type="submit"],
-			input[type="reset"],
-			button,
-			.button {
-				letter-spacing: 2px;
-				display: block;
-				padding: 1em 0 1em 0;
-				width: 100%;
-			}
-
-		/* Actions */
-
-			ul.actions li {
-				display: block;
-				margin: 1em 0 0 0;
-			}
-
-				ul.actions li:first-child {
-					margin-top: 0;
-				}
-
-		/* Box */
-
-			.box.excerpt header {
-				text-align: center;
-			}
-
-		/* Header */
-
-			#header > .container {
-				padding: 6em 0 4em 0;
-			}
-
-			#header h1 {
-				font-size: 2em;
-				letter-spacing: 8px;
-				line-height: 1.325em;
-			}
-
-			#header p {
-				margin: 1.25em 0 0 0;
-				letter-spacing: 2px;
-			}
-
-		/* Banner */
-
-			#banner {
-				padding: 5em 0;
-			}
-
-				#banner > .container {
-					padding: 0;
-				}
-
-					#banner > .container:before, #banner > .container:after {
-						display: none;
-					}
-
-				#banner p {
-					font-size: 1.25em;
-				}
-
-		/* Features */
-
-			#features {
-				padding: 2em 0;
-			}
-
-				#features ul.actions {
-					margin-top: 0;
-				}
-
-		/* Main */
-
-			#main {
-				padding: 2em 0;
-			}
-
-		/* Content */
-
-			#content > section,
-			#content > article {
-				margin: 3em 0 0 0;
-				padding: 3em 0 0 0;
-			}
-
-		/* Sidebar */
-
-			#sidebar {
-				padding-top: 3em;
-			}
-
-				#sidebar > section,
-				#sidebar > article {
-					margin: 3em 0 0 0;
-					padding: 3em 0 0 0;
-				}
-
-		/* Footer */
-
-			#footer {
-				padding: 2em 0;
-			}
-
-				#footer ul.icons {
-					margin-bottom: 0;
-				}
-
-		/* Copyright */
-
-			#copyright .links {
-				margin-bottom: 0;
-			}
-
-				#copyright .links li {
-					display: block;
-					padding-left: 0;
-					margin-left: 0;
-					border-left: 0;
-				}
-
-	}

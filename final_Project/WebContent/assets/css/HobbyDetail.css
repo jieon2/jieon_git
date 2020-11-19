@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Arvo:700");
 
 #my-Sidebar {
+      
         width: 250px;
         padding: 20px;
         margin-bottom: 20px;
@@ -9,9 +10,18 @@
         background-color: #e5e5e5;
         border:solid 1px gray;
         height:700px; 
-        margin-top:90px; 
-      }
- 
+        margin-top:90px;            
+         }
+         
+@media screen and (max-width: 800px) {
+  #my-Sidebar {
+    display: none;
+  }
+}
+         
+ #my-Sidebar > ul{
+ list-style:none;
+ }
 
  
  * { 
@@ -74,6 +84,14 @@ p{
 	padding: 0.25em 0 0.25em 0;
 }
 
+/***main******/
+
+@import url("fontawesome-all.min.css");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Arvo:700");
+
+#name{
+	margin: 5em, 0,0,0;
+}
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -136,9 +154,9 @@ input::-moz-focus-inner {
 
 input, select, textarea {
 	-moz-appearance: none;
-	/*-webkit-appearance: none;*/
+	/*-webkit-appearance: none;
 	-ms-appearance: none;
-	appearance: none;
+	appearance: none;*/
 }
 
 /* Basic */
@@ -197,7 +215,7 @@ input, select, textarea {
 	h3 {
 		font-size: 1em;
 		letter-spacing: 2px;
-		margin: 1.25em 0 1.25em 0;
+		margin: 0 0 1.25em 0;
 	}
 
 	a {
@@ -1531,6 +1549,8 @@ input, select, textarea {
 						.row.gtr-200.gtr-uniform > * {
 							padding-top: 60px;
 						}
+						
+						
 
 		}
 
@@ -1598,6 +1618,7 @@ input, select, textarea {
 /* List */
 
 	ul {
+		list-style: disc;
 		padding-left: 1em;
 	}
 
@@ -1673,7 +1694,7 @@ input, select, textarea {
 	}
 
 		ul.divided li {
-			border-top: solid 2px #e5e5e5;
+			/*border-top: solid 2px #e5e5e5; 추천 동영상 옆 설명 아래 선*/
 			padding-left: 0;
 			margin: 2.5em 0 0 0;
 			padding: 2.5em 0 0 0;
@@ -1838,6 +1859,7 @@ input, select, textarea {
 		transition: all 0.25s ease-in-out;
 		-webkit-appearance: none;
 		position: relative;
+		display: inline-block;
 		background: #ed786a;
 		color: #fff !important;
 		text-transform: uppercase;
@@ -1850,7 +1872,7 @@ input, select, textarea {
 		text-align: center;
 		font-size: 0.85em;
 		letter-spacing: 2px;
-		padding: 0.5em 2em 0.5em 2em;
+		padding: 10px;
 	}
 
 		input[type="button"].icon:before,
@@ -1925,6 +1947,26 @@ input, select, textarea {
 		margin: 10em 0 2.5em 0;
 	}
 
+
+	.box.excerpt2 .date{
+		background: #878787;
+		color: #fff;
+		font-weight: 400;
+		text-transform: uppercase;
+		border-radius: 4px;
+		border: 0;
+		box-shadow: 0.125em 0.175em 0 0 rgba(0, 0, 0, 0.125);
+		display: inline-block;
+		font-size: 0.85em;
+		letter-spacing: 2px;
+		padding: 0.25em 1em 0.25em 1em;
+		margin: 10em 0 2.5em 0;
+	}
+
+	.box.excerpt2 {
+		padding-top:9em;
+	}
+
 /* Icons */
 
 	.icon {
@@ -1986,7 +2028,8 @@ input, select, textarea {
 		font-size: 1.5em;
 		letter-spacing: 8px;
 	  	position: absolute;
-	  	margin: 0 0 0 5em;
+	  	margin: 0em 0 0 1em;
+	  	padding: 0em 0 0em 0;
 	  	cursor: default;
        /* top: -500px;
         left:50px;
@@ -2045,7 +2088,7 @@ input, select, textarea {
 
 		#nav > ul > li {
 			display: inline-block;
-			padding-right: 2em;
+			padding-right: 3em;
             
 		}
 
@@ -2062,6 +2105,7 @@ input, select, textarea {
 				outline: 0;
 				display: block;
                 float:left;
+                top:;
 			}
 
 				#nav > ul > li > a:before {
@@ -2175,15 +2219,18 @@ input, select, textarea {
 				color: #ed786a;
 			}
 
-        .navtop{
-            position: absolute;
-            top:-50px;
-            left:450px;
-            width: 100%;
-            cursor: default;
-            font-size: 0.8em;
-    
-        }
+    .navtop {
+    position: absolute;
+    top: -50px;
+    left: 450px;
+    right: 0px;
+    width: 100%;
+    cursor: default;
+    font-size: 0.8em;
+    display:block;
+    justify-content: space-between;
+    align-items: center;
+}
 
 /*Category*/   
 
@@ -2204,11 +2251,17 @@ c_wrap {
   justify-content: center;
   width: 100%;
   height: 100%;
+  margin-top:3em;
 }
 
 .c_menu {
   display: flex;
 }
+
+@media (max-width: 1220px){
+            .c_container {width: 100%;}
+            .row {padding: 0 15px;}
+        }
 
 .menu-item {
   display: flex;
@@ -2319,6 +2372,8 @@ c_wrap {
   width:100%;
     
 }
+
+
 
 
 .slide:first-of-type {
@@ -3725,7 +3780,10 @@ c_wrap {
 				#sidebar > article {
 					margin: 3em 0 0 0;
 					padding: 3em 0 0 0;
+				
 				}
+
+
 
 		/* Footer */
 
@@ -3751,3 +3809,4 @@ c_wrap {
 				}
 
 	}
+	

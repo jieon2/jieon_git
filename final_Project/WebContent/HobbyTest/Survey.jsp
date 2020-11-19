@@ -32,14 +32,7 @@
                                  <li><a href="/HobbyTest/mbti.jsp">MBTI 검사</a></li>
                               </ul>
                            </li>
-                           <li><a href="/MyPage/MyClass.jsp">
-                           <span>MY Page</span></a>
-                              <ul>
-                                 <li><a href="/MyPage/MyClass.jsp">My Class</a></li>
-                                 <li><a href="/MyPage/HobbyLog.jsp">활동로그</a></li>
-                                 <li><a href="/MyPage/Profile.jsp">내 프로필</a></li>
-                                 <li><a href="/MyPage/EditProfile.jsp">프로필수정</a></li>
-                              </ul>
+                           
                            <li><a href="/ServiceCenter/FAQboard/FAQ.jsp">
                            <span>Service Center</span></a>
                               <ul>
@@ -62,7 +55,7 @@
                                     <li><a href="/Join/LoginForm.jsp">Login</a></li>
                                 <li><a href="/Join/insertForm.jsp">Join</a></li>
                                   <!-- <li><a class="fas fa-key" href="/MyPage/Profile.jsp"></a>-->
-                                    <li><a href="/MyPage/Profile.jsp"><img src="../images/gear.png"></a></li>
+                                  <!-- <li><a href="/MyPage/Profile.jsp"><img src="../images/gear.png"></a></li>-->
                                                                             
                         </ul>
                      </nav>
@@ -375,6 +368,8 @@
 
    </div>
 
+
+	<a style="display:scroll;position:fixed;bottom:10px;right:10px;" href="#" title=”맨위로"><img src="/images/up-arrow.png"></a>
    <!-- partial -->
 
 
